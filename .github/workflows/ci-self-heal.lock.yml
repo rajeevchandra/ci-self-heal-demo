@@ -23,12 +23,14 @@
 #
 # Investigate failed CI runs and open a draft PR for safe fixes.
 #
-# frontmatter-hash: 593f7af3a1d329604a5870dd8cfd88fcd18ee96414fc1305b2ce24dfaa7c17e7
+# frontmatter-hash: be143548c49388f0c830db9e48e52eedd908e69c0475d95de3aea7d8c193f3a5
 
 name: "ci-self-heal"
 "on":
   workflow_run:
     # zizmor: ignore[dangerous-triggers] - workflow_run trigger is secured with role and fork validation
+    branches:
+    - main
     types:
     - completed
     workflows:
